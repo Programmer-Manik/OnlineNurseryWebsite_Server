@@ -3,14 +3,14 @@ import httpStatus from "http-status";
 import AppError from "../../Error/AppError";
 import { TProducts } from "./product.interface";
 import { Product } from "./product.model";
-import { ProductSearchableFields } from "./product.constant";
+import { productSearchableFields } from "./product.constant";
 
 // created product
-const CreateProductIntoDB = async (payload: TProducts) => {
+const createProductIntoDB = async (payload: TProducts) => {
   return await Product.create(payload);
 };
 // get product
-const GetAllProductFromDB = async (query: Record<string, unknown>) => {
+const getAllProductFromDB = async (query: Record<string, unknown>) => {
   // console.log(query);
   // const queryObj: any = { ...query };
 
@@ -58,7 +58,7 @@ const GetAllProductFromDB = async (query: Record<string, unknown>) => {
     if (search) {
       // search
 
-      queryField.$or = ProductSearchableFields.map((field) => ({
+      queryField.$or = productSearchableFields.map((field) => ({
         [field]: { $regex: search, $options: "i" },
       }));
     }
@@ -108,7 +108,7 @@ const GetAllProductFromDB = async (query: Record<string, unknown>) => {
   }
 };
 // get product
-const GetSingleProductFromDB = async (id: string) => {
+const getSingleProductFromDB = async (id: string) => {
   const isProduct = await Product.findById(id);
   if (!isProduct) {
     throw new AppError(httpStatus.NOT_FOUND, "product not found");
@@ -117,7 +117,7 @@ const GetSingleProductFromDB = async (id: string) => {
 };
 
 // product update
-const UpdateProductIntoDB = async (id: string, payload: Partial<TProducts>) => {
+const updateProductIntoDB = async (id: string, payload: Partial<TProducts>) => {
   const isExistsProduct = await Product.findById(id);
   if (!isExistsProduct) {
     throw new AppError(httpStatus.NOT_FOUND, "Product not found!");
@@ -130,7 +130,7 @@ const UpdateProductIntoDB = async (id: string, payload: Partial<TProducts>) => {
 };
 
 // product deleted
-const DeleteProductFromDB = async (id: string) => {
+const deleteProductFromDB = async (id: string) => {
   const isExistsProduct = await Product.findById(id);
   if (!isExistsProduct) {
     throw new AppError(httpStatus.NOT_FOUND, "Product not found!");
@@ -140,9 +140,9 @@ const DeleteProductFromDB = async (id: string) => {
 };
 
 export const ProductServices = {
-  CreateProductIntoDB,
-  GetAllProductFromDB,
-  GetSingleProductFromDB,
-  UpdateProductIntoDB,
-  DeleteProductFromDB,
+  createProductIntoDB,
+  getAllProductFromDB,
+  getSingleProductFromDB,
+  updateProductIntoDB,
+  deleteProductFromDB,
 };
