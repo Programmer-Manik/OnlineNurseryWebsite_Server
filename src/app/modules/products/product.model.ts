@@ -6,9 +6,14 @@ const ProductCreateSchema = new Schema<TProducts>({
     type: String,
     required: [true, "Title is required"],
   },
-  brand: {
-    type: String,
-    required: [true, "Brand is required"],
+  quantity: {
+    type: Number,
+    required: true,
+  },
+  inStock: {
+    type: Boolean,
+    required: true,
+    default: true,
   },
   description: {
     type: String,
