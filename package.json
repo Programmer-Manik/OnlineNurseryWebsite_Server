@@ -1,11 +1,11 @@
 {
-  "name": "assignment04",
+  "name": "OnlineNurseryWebsite_Server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start:prod": "node ./dist/server.js",
-    "start:dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
     "build": "tsc",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
