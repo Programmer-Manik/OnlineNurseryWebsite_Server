@@ -1,18 +1,16 @@
-# Nursery Online
+
 
 ## Project Overview
 
-**Nursery Online** is a Node.js and TypeScript-based server application designed to provide a robust and scalable backend solution for an online nursery store. This application uses Express.js for handling HTTP requests, Mongoose for MongoDB interactions, and various other libraries for enhanced functionality. This README file will guide you through the setup and usage of this application.
+**online-nursery-website-server** is a Node.js and TypeScript-based server application designed to provide a robust and scalable backend solution for an online nursery store. This application uses Express.js for handling HTTP requests, Mongoose for MongoDB interactions, and various other libraries for enhanced functionality. This README file will guide you through the setup and usage of this application.
 
 ## Live URLs
 
-- **Frontend:** [Nursery Client](https://nursery-client.vercel.app/)
-- **Backend:** [Nursery Backend](https://nursery-backend-mu.vercel.app/)
+- **Backend:** [nursery-website-server](https://online-nursery-website-server-xi.vercel.app/)
 
 ## GitHub Repositories
 
-- **Client Repository:** [Nursery Client Repo](https://github.com/jonycmtt/nursery-client)
-- **Backend Repository:** [Nursery Backend Repo](https://github.com/jonycmtt/nursery-backend)
+- **Backend Repository:** [nursery-website-server-repository](https://github.com/Programmer-Manik/OnlineNurseryWebsite_Server.git)
 
 ## Features
 
@@ -47,6 +45,6 @@ Ensure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clonehttps://github.com/jonycmtt/nursery-backend
-   cd nursery-backend
+   https://github.com/Programmer-Manik/OnlineNurseryWebsite_Server.git
+   cd OnlineNurseryWebsite_Server
    ```
